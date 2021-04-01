@@ -1,0 +1,102 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+h1 {
+  font-weight: bolder;
+  font-size: 32px;
+  text-align: center;
+}
+p {
+  font-weight: 100;
+  width: 50%;
+  text-align: center;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#forest {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+}
+.container {
+  position: relative;
+}
+
+.container :hover {
+  animation: cardAnim 3s ease-in-out alternate;
+}
+.leaf {
+  width: 75px;
+  filter: drop-shadow(-15px -5px 8px rgba(0, 0, 0, 0.5));
+  animation: rotate 3s ease-in-out infinite alternate-reverse;
+}
+#leaf1 {
+  position: absolute;
+  width: 100px;
+  top: -10%;
+  left: -10%;
+}
+
+#leaf2 {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  animation: rotate 3s ease-in-out infinite alternate-reverse;
+}
+#leaf3 {
+  position: absolute;
+  width: 125px;
+  right: -10%;
+  bottom: -10%;
+  animation: side 3s ease-in-out infinite alternate-reverse;
+}
+#dry {
+  position: absolute;
+  width: 100px;
+  left: -10%;
+  bottom: -35px;
+  animation: side 3s ease-in-out infinite alternate-reverse;
+}
+@keyframes side {
+  from {
+    transform: rotateY(22deg);
+    transform: rotateX(22deg);
+    transform: skew(35px);
+  }
+  to {
+    transform: rotateX(0deg);
+    transform: skew(0px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateY(25px) rotate(100deg);
+    transform: skew(20deg);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+/* container rotation on hover */
+@keyframes cardAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
